@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="CustomAuthorizationService" Version="1.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 

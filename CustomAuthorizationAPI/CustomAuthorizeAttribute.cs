@@ -1,28 +1,27 @@
-﻿//using Microsoft.AspNetCore.Authorization;
-//using Microsoft.AspNetCore.Http.HttpResults;
-//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.AspNetCore.Mvc.Filters;
+﻿
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
-//namespace CustomAuthorizationAPI
-//{
-//    public class CustomAuthorizeAttribute : Attribute, IAuthorizationFilter
-//    {
-//        private readonly string _role;
+namespace CustomAuthorizationAPI
+{
+    public class CustomAuthorizeAttribute : Attribute, IAuthorizationFilter
+    {
+        private readonly string _role;
 
-//        public CustomAuthorizeAttribute(string role)
-//        {
-//            _role = role;
-//        }
+        public CustomAuthorizeAttribute(string role)
+        {
+            _role = role;
+        }
 
-//        public void OnAuthorization(AuthorizationFilterContext context)
-//        {
-//            if (_role != "admin")
-//            {
-//                context.Result = new BadRequestResult();
-//                return;
-//            }
+        public void OnAuthorization(AuthorizationFilterContext context)
+        {
+            if (_role != "admin")
+            {
+                context.Result = new BadRequestResult();
+                return;
+            }
 
-//            context.Result = new OkResult();
-//        }
-//    }
-//}
+            context.Result = new OkResult();
+        }
+    }
+}
