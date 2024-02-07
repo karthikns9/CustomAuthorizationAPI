@@ -3,6 +3,8 @@ using CustomAuthorizationService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -38,6 +40,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCustomAuthentication();
 builder.Services.AddCustomAuthorization();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer();
 
 var app = builder.Build();
 
