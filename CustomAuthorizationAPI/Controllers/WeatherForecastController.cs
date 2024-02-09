@@ -25,8 +25,7 @@ namespace CustomAuthorizationAPI.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        //[MyAuthorize("admin")]
-        //[CustomAuthorize(Request.Headers.Authorization)]
+        [MyAuthorize]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

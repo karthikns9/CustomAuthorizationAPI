@@ -13,6 +13,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 //builder.Services.AddAuthentication(options =>
 //{
 //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -38,13 +39,13 @@ builder.Services.AddSwaggerGen();
 //    // Add more policies as needed for different roles
 //});
 
-builder.Services.AddCustomAuthentication();
-builder.Services.AddCustomAuthorization();
+//builder.Services.AddCustomAuthentication();
+//builder.Services.AddCustomAuthorization();
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer();
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//}).AddJwtBearer();
 
 var app = builder.Build();
 
